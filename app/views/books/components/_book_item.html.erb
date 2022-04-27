@@ -8,7 +8,7 @@
   </div>
   <div class="card-body d-flex justify-content-between p-0 p-1 bg-dark">
     <%= link_to 'Tell me more', book, class: "card-link btn btn-outline-light btn-sm" %>
-    <a href="#" class="card-link btn btn-outline-warning btn-sm">Reserve this book</a>
+    <%= link_to "Reserve this book", profile_reserve_path(:book_id => book.id), method: :post, class: "card-link btn btn-outline-warning btn-sm" %>
   </div>
 </div>
 

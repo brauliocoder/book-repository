@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   authenticate :user do
     get 'profile/home'
+    post 'profile/reserve'
     resources :books, only: [:index, :show]
   end
   # resources :books
