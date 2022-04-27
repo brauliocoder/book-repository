@@ -1,2 +1,0 @@
-class Petition < ApplicationRecord
-end

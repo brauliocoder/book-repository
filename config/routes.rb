@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'books#index'
   
-  devise_for :users
-  
-  get 'profile/home'
-  resources :books
+  authenticate :user do
+    get 'profile/home'
+    resources :books, only: [:index, :show]
+  end
+  # resources :books
 end

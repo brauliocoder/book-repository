@@ -10,7 +10,8 @@
     <%= link_to 'Tell me more', book, class: "card-link btn btn-outline-light btn-sm" %>
     <a href="#" class="card-link btn btn-outline-warning btn-sm">Reserve this book</a>
   </div>
-  </div>
+</div>
 
-<%= link_to 'Edit', edit_book_path(book) %>
-<%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% if user_signed_in? %>
+<% end %>
+
