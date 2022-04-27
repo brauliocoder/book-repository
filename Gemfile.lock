@@ -75,6 +75,9 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.10.0)
+    excon (0.92.3)
+    faker (2.20.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -194,6 +197,8 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   devise (~> 4.8)
+  excon (~> 0.92.3)
+  faker (~> 2.20)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
