@@ -1,4 +1,6 @@
 class Reservation < ApplicationRecord
+  validates :user, uniqueness: { scope: [:book] }
+
   belongs_to :user
   belongs_to :book
 

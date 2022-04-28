@@ -5,3 +5,11 @@
 svg {
   height: 40px;
 }
+
+#books-order-box {
+  border: 1px dotted gray;
+  border-radius: 0.5rem;
+  max-height: 120px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}

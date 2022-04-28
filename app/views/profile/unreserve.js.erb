@@ -1,0 +1,4 @@
+var item = document.querySelector("#item-<%= escape_javascript( @unreserved_book.book_id ) %>");
+if (item){
+  item.remove();
+}

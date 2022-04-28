@@ -1,0 +1,6 @@
+<ol id="books-order-box" class="py-2">
+  <% @pending.each do |book| %>
+    <% book = book.book %>
+    <%= render 'profile/components/book_order_item', book: book %>
+  <% end %>
+</ol>

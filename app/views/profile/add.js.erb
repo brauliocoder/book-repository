@@ -1,0 +1,2 @@
+document.querySelector("#item-<%= escape_javascript( @book.book_id ) %>").remove();
+document.querySelector("#books-order-box").insertAdjacentHTML("afterbegin", "<%= escape_javascript( render 'profile/components/book_order_item', book: @book.book ) %>")
