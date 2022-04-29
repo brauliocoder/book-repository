@@ -8,9 +8,27 @@
 </div>
 <div class="ms-4 mt-2">
   <div>
-    <h5>Buy new books</h5>
-    <div id="to-pay-section">
-      <%= render 'profile/components/to_pay_section' %>
+    <div class="d-flex flex-col gap-5">
+      <div class="col" id="to-pay-section">
+        <h5 class="m-0">Buy new books</h5>
+        <%= render 'profile/components/to_pay_section' %>
+      </div>
+      <div class="col">
+        <h5 class="m-0">Payment</h5>
+        <p>Click the button below to activate the form for 2 min.</p>
+        <%= render 'profile/components/payment_form' %>
+        <div class="d-flex align-items-center mt-2">
+          <%= link_to "Pay",
+            profile_buy_path,
+            id: "pay-btn",
+            class: "btn btn-success px-5 disabled",
+            method: :patch,
+            remote: true %>
+          <div id="time-down" class="ms-2">
+            <span id="count-down">02:00</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div>

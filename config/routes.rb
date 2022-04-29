@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get 'profile/reservation'
 
     post 'profile/reserve'
+    patch 'profile/buy'
     patch 'profile/add'
     delete 'profile/unreserve'
     

@@ -18,6 +18,15 @@ class User < ApplicationRecord
     end
   end
 
+  def buy_pending_books(pending_books)
+    if pending_books.count > 0
+      pending_books.each do |book|
+        book.booking_status = "owned"
+        book.save
+      end
+    end
+  end
+
   def add_book(book_id)
     book = reservations.find_by_book_id(book_id)
     book.booking_status = "pending"

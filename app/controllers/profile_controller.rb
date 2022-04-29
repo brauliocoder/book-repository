@@ -1,10 +1,11 @@
 class ProfileController < ApplicationController
   before_action :set_books, only: %i[ home reservation ]
   before_action :reserved_books, only: %i[ home reservation unreserve ]
+  before_action :pending_books, only: %i[ home add reservation unreserve buy ]
   before_action :authenticate_user!
 
   def home
-    @pending = current_user.with_status_pending
+    
   end
 
   def reservation
@@ -23,12 +24,20 @@ class ProfileController < ApplicationController
     @book = current_user.add_book(params[:book_id])
   end
 
-  private
-  def set_books
-    @books = User.find_by_id(current_user.id).books
+  def buy
+    current_user.buy_pending_books(@pending)
   end
 
-  def reserved_books
-    @reserved = current_user.with_status_reserved
-  end
+  private
+    def set_books
+      @books = User.find_by_id(current_user.id).books
+    end
+
+    def reserved_books
+      @reserved = current_user.with_status_reserved
+    end
+
+    def pending_books
+      @pending = current_user.with_status_pending
+    end
 end

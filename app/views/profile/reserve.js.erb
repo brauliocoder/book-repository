@@ -1,6 +1,10 @@
 <% if @reserved_book.errors.any? %>
   console.log("Error saving");
 <% else %>
-  document.querySelector("<%= escape_javascript("#btn-#{@reserved_book.book_id}") %>").remove();
+  var item = document.querySelector("<%= escape_javascript("#btn-#{@reserved_book.book_id}") %>");
+  if (item){
+    item.remove();
+  }
+  
   document.querySelector("<%= escape_javascript("#body-#{@reserved_book.book_id}") %>").insertAdjacentHTML("beforeend", "<%= escape_javascript( render 'books/components/disabled_button' ) %>");
 <% end %>
