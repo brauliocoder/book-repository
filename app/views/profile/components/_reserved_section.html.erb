@@ -1,5 +1,5 @@
 <% if @reserved.count > 0 %>
-  <ul>
+  <ul class="box-reserved-books">
     <% @reserved.each do |book| %>
       <% book = book.book %>
       <li class="hide-actions" id="item-<%= book.id %>">

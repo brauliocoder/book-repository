@@ -1,3 +1,6 @@
-document.querySelector("#item-<%= escape_javascript( @book.book_id ) %>").remove();
-document.querySelector("#books-order-box").insertAdjacentHTML("afterbegin", "<%= escape_javascript( render 'profile/components/book_order_item', book: @book.book ) %>")
-document.querySelector("#order-counter").innerHTML = "<%= j @pending.count %>";
+var item = document.querySelector("#item-<%= escape_javascript( @book.book_id ) %>")
+if (item) {
+  item.remove();
+  document.querySelector("#books-order-box").insertAdjacentHTML("afterbegin", "<%= escape_javascript( render 'profile/components/book_order_item', book: @book.book ) %>")
+  document.querySelector("#order-counter").innerHTML = "<%= @pending.count %>";
+}
