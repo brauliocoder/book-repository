@@ -5,10 +5,10 @@ class ProfileController < ApplicationController
   before_action :authenticate_user!
 
   def home
-    
   end
 
-  def reservation
+  def owned
+    @owned_books = current_user.with_status_owned
   end
 
   def reserve

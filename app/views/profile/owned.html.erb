@@ -1,0 +1,9 @@
+<div class="mt-5">
+  <h5>Books already owned</h5>
+  <p>Hove the cursor over each title to remove your own books.</p>
+  <span id="books-owned">
+    <%= render 'profile/components/owned_books', owned_books: @owned_books %>
+  </span>
+</div>
+
+<%= javascript_pack_tag 'listActionHide' %>

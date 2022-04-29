@@ -1,0 +1,16 @@
+<ul>
+  <% owned_books.each do |book| %>
+    <% book = book.book %>
+    <li class="hide-actions" id="item-<%= book.id %>">
+      <span class="actions">
+        <%= link_to "remove",
+          profile_unreserve_path(:book_id => book.id),
+          method: :delete,
+          class: "btn btn-outline-danger btn-sm py-0 ms-1",
+          remote: true,
+          :data => {:confirm => 'Are you sure?'} %>
+      </span>
+      <span class="ms-1"><%= book.title %></span>
+    </li>
+  <% end %>
+</ul>

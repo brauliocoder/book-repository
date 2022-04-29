@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   authenticate :user do
     get 'profile/home'
-    get 'profile/reservation'
+    get 'profile/owned'
 
     post 'profile/reserve'
     patch 'profile/buy'

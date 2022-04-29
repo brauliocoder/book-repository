@@ -42,4 +42,8 @@ class User < ApplicationRecord
   def with_status_pending
     return reservations.where(booking_status: "pending")
   end
+
+  def with_status_owned
+    return reservations.where(booking_status: "owned")
+  end
 end

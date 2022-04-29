@@ -3,28 +3,30 @@
     <%= link_to "Amazook", root_path, class: "navbar-brand" %>
     <div class="d-flex jusify-content-between" id="navbarNav">
       <ul class="navbar-nav">
+        <li class="nav-item me-3">
+          <%= link_to "Home", root_path, class: "nav-link" %>
+        </li>
+
         <% if user_signed_in? %>
-          <%= link_to profile_reservation_path, class: "text-decoration-none" do %>
+          <%= link_to profile_owned_path, class: "text-decoration-none" do %>
             <li class="nav-item d-flex align-items-center">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
+                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+              </svg>
+              <span class="nav-link" href="#"><small>Books Owned</small></span>
+            </li>
+          <% end %>
+
+          <%= link_to profile_home_path, class: "text-decoration-none" do %>
+            <li class="nav-item d-flex align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
               </svg>
               <span class="nav-link"><small>Books Reserved</small></span>
             </li>
           <% end %>
-
-
-          <li class="nav-item d-flex align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-            </svg>
-            <a class="nav-link" href="#"><small>Order New Books</small></a>
-          </li>
         <% end %>
         
-        <li class="nav-item">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
         <li class="nav-item  d-flex align-items-center">
           <%= render 'books/components/dropdown' %>
         </li>
