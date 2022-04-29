@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag(@book.cover_url) %>
+
 <p>
   <strong>Title:</strong>
   <%= @book.title %>
@@ -13,11 +15,6 @@
 <p>
   <strong>Description:</strong>
   <%= @book.description %>
-</p>
-
-<p>
-  <strong>Cover url:</strong>
-  <%= @book.cover_url %>
 </p>
 
 <p>
